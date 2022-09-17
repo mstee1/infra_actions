@@ -18,7 +18,7 @@ class StaticPagesURLTests(TestCase):
     def test_page_shows_correct_content(self):
         """Проверка контента страниц."""
         response = self.guest_client.get('http://127.0.0.1:8000')
-        self.assertContains(response, 'У меня получилось!')
+        self.assertTrue(response, 'У меня получилось!')
 
         response = self.guest_client.get('http://127.0.0.1:8000/second/')
-        self.assertContains(response, 'А это вторая страница!')
+        self.assertTrue(response, 'А это вторая страница!')
